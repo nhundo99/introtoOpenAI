@@ -1,4 +1,21 @@
+from torch import nn
+
+class Qfunction(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.stack = nn.Sequential(
+            nn.Linear(4, 16),
+            nn.ReLU(),
+            nn.Linear(16, 16),
+            nn.ReLU(),
+            nn.Linear(16,2)
+        )
+
+
 # network for Q function
+# input the state and output value for each possible action
+
+# maybe consider normalization or feature scaling
 
 # main function
 # initialize empty replay buffer with size N
